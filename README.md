@@ -43,12 +43,12 @@ git clone https://github.com/<your-username>/cashsage.git
 cd cashsage
 
 
-## 2. Install Dependencies
+### 2. Install Dependencies
 ```bash
 npm install
 
 
-## 3. Create & Configure Your Environment
+### 3. Create & Configure Your Environment
 cp .env.example .env
 # Then open `.env` and set:
 # SUPABASE_URL=<your-supabase-url>
@@ -56,10 +56,10 @@ cp .env.example .env
 # OPENAI_KEY=<your-openai-key>
 # REDIS_URL=redis://127.0.0.1:6379
 
-## 4. Provision Redis for Local Development
+### 4. Provision Redis for Local Development
 docker run -d --name cashsage-redis -p 6379:6379 redis:7-alpine
 
-## 5. Prepare Your Database
+### 5. Prepare Your Database
 Paste the following into the Supabase SQL editor and run:
 create extension if not exists "pgcrypto";
 
@@ -110,12 +110,12 @@ create table matches (
   matched_at     timestamptz not null default now()
 );
 
-##6. Import Your Invoices
+### 6. Import Your Invoices
 npx ts-node scripts/importInvoices.ts
 # → ✅ Imported 51 invoice rows.
 
 
-##7. Run the Application
+### 7. Run the Application
 
 Open two terminals:
 
@@ -129,32 +129,26 @@ npx ts-node src/jobs/matchQueue.ts
 
 
 
+### 📖 Architecture & Why We Did It
 
-📖 Architecture & Why We Did It
-Layer	Responsibility
-Express API	Ingest transactions & expose match endpoint
-Supabase (Postgres)	Durable storage for invoices, transactions, matches
-BullMQ + Redis	Background queue to decouple LLM calls
-LLM Matcher	Hybrid rules + GPT fallback for best match
-Scripts	Invoice import & reprocess unmatched jobs
+| Layer                   | Responsibility                                         |
+| ----------------------- | ------------------------------------------------------ |
+| **Express API**         | Ingest transactions & expose match endpoint            |
+| **Supabase (Postgres)** | Durable storage for invoices, transactions, matches    |
+| **BullMQ + Redis**      | Background queue to decouple LLM calls                 |
+| **LLM Matcher**         | Hybrid rules + GPT fallback for best match             |
+| **Scripts**             | Invoice import & reprocess unmatched jobs              |
 
-Asynchronous Matching: Users get immediate 201 responses; heavy LLM calls run in the background.
+- **Asynchronous Matching:** Users get immediate `201` responses; heavy LLM calls run in the background.  
+- **Deterministic Rules First:** Exact-amount, payment method, and description filters catch common cases instantly, saving LLM calls.  
+- **LLM Fallback:** Catches edge cases where simple rules aren’t enough.  
+- **Reprocess Script:** One-off recovery for any jobs that failed pre-fix.  
+- **Schema Design:** UUIDs for invoices & matches; identity integers for transactions to avoid key collisions.  
 
-Deterministic Rules First: Exact-amount, payment method, and description filters catch common cases instantly, saving LLM calls.
+## 🛠️ Future Enhancements
 
-LLM Fallback: Catches edge cases where simple rules aren’t enough.
-
-Reprocess Script: One-off recovery for any jobs that failed pre-fix.
-
-Schema Design: UUIDs for invoices & matches; identity integers for transactions to avoid key collisions.
-
-🛠️ Future Enhancements
-Payment Tracking: Uncomment and refine payment_status/amount_paid logic for live balances.
-
-Auth & Multi-Tenant: Lock down endpoints via Supabase Auth, isolate data per organization.
-
-Frontend Dashboard: React app to upload transactions, view invoice breakdowns, and manual override matches.
-
-Batch Processing: Support bulk POST /transactions with per-item success/failure.
-
-Monitoring & Alerts: Integrate Prometheus/Grafana or Sentry for queue/job health.
+- **Payment Tracking:** Uncomment and refine `payment_status`/`amount_paid` logic for live balances.  
+- **Auth & Multi-Tenant:** Lock down endpoints via Supabase Auth, isolate data per organization.  
+- **Frontend Dashboard:** React app to upload transactions, view invoice breakdowns, and manual override matches.  
+- **Batch Processing:** Support bulk `POST /transactions` with per-item success/failure.  
+- **Monitoring & Alerts:** Integrate Prometheus/Grafana or Sentry for queue/job health.  
