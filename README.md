@@ -38,13 +38,13 @@ CashSage is a lightweight, TypeScript-based backend service that ingests bank tr
 
 ### 1. Clone the Repo
 
-```bash
+
 git clone https://github.com/<your-username>/cashsage.git
 cd cashsage
 
 
 ### 2. Install Dependencies
-```bash
+
 npm install
 
 
@@ -127,7 +127,7 @@ Terminal B:
 npx ts-node src/jobs/matchQueue.ts
 # Worker is now listening for match jobs
 
-
+---
 
 ### 📖 Architecture & Why We Did It
 
