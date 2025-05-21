@@ -1,0 +1,51 @@
+InvoiceNumber,CustomerName,InvoiceDate,DueDate,LineItems,PaymentMethod
+1202,Global Tech,2025-01-13,2025-01-28,"SEO Services: $1609; Web Design: $715",Credit Card
+1104,Delta Co,2025-03-01,2025-03-16,"Web Design: $339",PayPal
+1203,Acme Corp,2025-02-28,2025-03-15,"Domain Renewal: $1269; Maintenance: $1176",PayPal
+1005,Echo Solutions,2025-01-12,2025-01-27,"Web Design: $1898; Hosting: $718",Credit Card
+1204,Acme Corp,2025-02-06,2025-02-21,"Consulting: $60",Credit Card
+1204,Beta LLC,2025-01-01,2025-01-16,"Consulting: $1030; Maintenance: $859",PayPal
+1004,Delta Co,2025-01-03,2025-01-18,"Domain Renewal: $1235",Bank Transfer
+1201,Global Tech,2025-01-14,2025-01-29,"Domain Renewal: $207; Web Design: $640; Hosting: $843",Bank Transfer
+1005,FancyCorp,2025-02-11,2025-02-26,"Consulting: $1836; Software License: $1183",Credit Card
+1202,Global Tech,2025-01-16,2025-01-31,"Consulting: $995",Bank Transfer
+1102,Acme Corp,2025-02-01,2025-02-16,"Web Design: $1065",Cash
+1204,Beta LLC,2025-01-24,2025-02-08,"Domain Renewal: $166; Web Design: $1783; SEO Services: $983",Check
+1004,Echo Solutions,2025-02-09,2025-02-24,"Domain Renewal: $1601; SEO Services: $1489; Software License: $928",Credit Card
+1001,Delta Co,2025-01-24,2025-02-08,"Domain Renewal: $1824; Maintenance: $599; Hosting: $1102",Credit Card
+1205,FancyCorp,2025-02-06,2025-02-21,"Hosting: $72",Bank Transfer
+1001,Charlie Inc,2025-01-25,2025-02-09,"Software License: $1104",Bank Transfer
+1001,Charlie Inc,2025-02-23,2025-03-10,"Maintenance: $1808",Cash
+1104,Charlie Inc,2025-01-28,2025-02-12,"Software License: $1390; Consulting: $1843; Web Design: $73",PayPal
+1103,FancyCorp,2025-01-28,2025-02-12,"Domain Renewal: $104; Hosting: $744",Cash
+1001,Global Tech,2025-01-04,2025-01-19,"Domain Renewal: $1937",PayPal
+1002,Acme Corp,2025-02-27,2025-03-14,"Maintenance: $1789; Web Design: $1120",Credit Card
+1102,Delta Co,2025-02-17,2025-03-04,"Maintenance: $480",Credit Card
+1004,Global Tech,2025-01-19,2025-02-03,"Software License: $77; Maintenance: $258; Consulting: $179",PayPal
+1204,Charlie Inc,2025-01-14,2025-01-29,"Software License: $1294; Hosting: $1355; Consulting: $64",Credit Card
+1001,Echo Solutions,2025-01-19,2025-02-03,"Domain Renewal: $338",PayPal
+1203,Beta LLC,2025-02-25,2025-03-12,"Hosting: $636; SEO Services: $709",Bank Transfer
+1202,Delta Co,2025-02-06,2025-02-21,"Software License: $1269; Web Design: $142; SEO Services: $1660",PayPal
+1205,Global Tech,2025-02-28,2025-03-15,"Consulting: $646; Domain Renewal: $128; Maintenance: $1149",Credit Card
+1001,Echo Solutions,2025-01-12,2025-01-27,"Consulting: $1275; Software License: $857",PayPal
+1203,Charlie Inc,2025-01-09,2025-01-24,"Web Design: $1702; SEO Services: $1348",Bank Transfer
+1003,Echo Solutions,2025-01-30,2025-02-14,"Consulting: $523; SEO Services: $1863",Bank Transfer
+1103,Global Tech,2025-01-17,2025-02-01,"Maintenance: $274; Hosting: $956; SEO Services: $104",PayPal
+1105,FancyCorp,2025-02-07,2025-02-22,"Domain Renewal: $1046",PayPal
+1101,Delta Co,2025-02-09,2025-02-24,"Software License: $695",Check
+1003,Acme Corp,2025-02-13,2025-02-28,"Hosting: $1005",Credit Card
+1202,Global Tech,2025-02-17,2025-03-04,"Web Design: $106",Check
+1201,Echo Solutions,2025-02-22,2025-03-09,"Maintenance: $236",Bank Transfer
+1204,Global Tech,2025-01-23,2025-02-07,"Hosting: $987",Credit Card
+1101,FancyCorp,2025-02-25,2025-03-12,"SEO Services: $1703; Domain Renewal: $272; Consulting: $1281",PayPal
+1104,Charlie Inc,2025-01-22,2025-02-06,"Web Design: $1184; Hosting: $751; Software License: $325",Check
+1204,Beta LLC,2025-01-21,2025-02-05,"Web Design: $1655; Software License: $1492",Check
+1102,Charlie Inc,2025-01-18,2025-02-02,"Consulting: $934",Credit Card
+1101,Acme Corp,2025-01-14,2025-01-29,"Web Design: $1872; Consulting: $1518",Check
+1003,Global Tech,2025-02-08,2025-02-23,"SEO Services: $1694",Bank Transfer
+1102,Beta LLC,2025-01-03,2025-01-18,"Hosting: $1767",Cash
+1204,Beta LLC,2025-01-31,2025-02-15,"Web Design: $774; Hosting: $1215; Consulting: $158",Check
+1203,Charlie Inc,2025-01-15,2025-01-30,"Hosting: $1198; Web Design: $1166; SEO Services: $51",Credit Card
+1205,Delta Co,2025-02-18,2025-03-05,"Domain Renewal: $1009; Software License: $1757; Hosting: $613",Bank Transfer
+1104,Global Tech,2025-02-08,2025-02-23,"Consulting: $1443",Credit Card
+1101,Charlie Inc,2025-02-05,2025-02-20,"Domain Renewal: $1381; Hosting: $878",Cash
