@@ -38,29 +38,34 @@ CashSage is a lightweight, TypeScript-based backend service that ingests bank tr
 
 ### 1. Clone the Repo
 
-
+```bash
 git clone https://github.com/<your-username>/cashsage.git
 cd cashsage
-
+```
 
 ### 2. Install Dependencies
-
+```bash
 npm install
-
+```
 
 ### 3. Create & Configure Your Environment
+```bash
 cp .env.example .env
 # Then open `.env` and set:
 # SUPABASE_URL=<your-supabase-url>
 # SUPABASE_KEY=<your-supabase-key>
 # OPENAI_KEY=<your-openai-key>
 # REDIS_URL=redis://127.0.0.1:6379
+```
 
 ### 4. Provision Redis for Local Development
+```bash
 docker run -d --name cashsage-redis -p 6379:6379 redis:7-alpine
+```
 
 ### 5. Prepare Your Database
 Paste the following into the Supabase SQL editor and run:
+```bash
 create extension if not exists "pgcrypto";
 
 -- Invoices
@@ -109,16 +114,17 @@ create table matches (
   score          numeric     not null,
   matched_at     timestamptz not null default now()
 );
+```
 
 ### 6. Import Your Invoices
+```bash
 npx ts-node scripts/importInvoices.ts
 # → ✅ Imported 51 invoice rows.
-
+```
 
 ### 7. Run the Application
-
 Open two terminals:
-
+```bash
 Terminal A:
 npx ts-node src/server.ts
 # → 🚀 Server listening on http://localhost:3000
@@ -126,7 +132,7 @@ npx ts-node src/server.ts
 Terminal B:
 npx ts-node src/jobs/matchQueue.ts
 # Worker is now listening for match jobs
-
+```
 ---
 
 ### 📖 Architecture & Why We Did It
